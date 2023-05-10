@@ -17,8 +17,6 @@
     "@vue/compiler-sfc": "^3.2.47",
     "diff": "^5.1.0",
     "element-plus": "^2.3.3",
-    "html-to-react": "^1.5.1",
-    "svg-captcha": "^1.4.0",
     "vue": "^3.2.37"
   },
   "devDependencies": {

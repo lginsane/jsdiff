@@ -67,7 +67,7 @@ const diffFunc = () => {
       const len = arr.length
       if (len === 0 || !arr[len - 1].isModify) {
         arr.push({
-          id: index,
+          id: 'id-' + index,
           isModify: true,
           old: item,
           new: null
@@ -76,7 +76,7 @@ const diffFunc = () => {
         arr[len - 1].new = item
       }
     } else {
-      item.id = index
+      item.id = 'id-' + index
       item.isModify = false
       arr.push(item)
     }
@@ -101,9 +101,9 @@ const diffFunc = () => {
   })
 }
 const oldFn = (id?: string) => {
-  const data = id === undefined ? formLabelAlign.oldResult : formLabelAlign.result
+  const data = !id ? formLabelAlign.oldResult : formLabelAlign.result
   formLabelAlign.result = data.map((item: any) => {
-    const compareId = id === undefined ? true : item.id === id
+    const compareId = !id ? true : item.id === id
     if (item.isModify && compareId) {
       // 修改
       if (item.new && item.old) {
